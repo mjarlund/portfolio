@@ -2,4 +2,6 @@
     import "../app.css";
 </script>
 
-<slot />
+<main class="max-h-screen snap-y snap-mandatory overflow-y-scroll">
+	<slot />
+</main>
