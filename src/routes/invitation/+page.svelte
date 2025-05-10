@@ -1,3 +1,11 @@
+<svelte:head>
+  <title>Invitation - Maria & Mikkel's 30-års fest</title>
+  <meta property="og:title" content="Invitation - Maria & Mikkel's 30-års fødselsdag og housewarming" />
+  <meta property="og:description" content="Kom og vær med til at fejre Maria & Mikkels store dag! Lørdag d. 9. august på Slotsparken 14 i Rønde." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
+
 <section class="min-h-screen bg-amber-100 flex flex-col items-center justify-center p-6 snap-start snap-always">
   <div class="container max-w-3xl mx-auto bg-white shadow-xl rounded-lg p-8 flex flex-col gap-6">
 
