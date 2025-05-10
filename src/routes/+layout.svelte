@@ -1,5 +1,5 @@
 <script>
-    import "../app.css";
+	import '../app.css';
 </script>
 
 <main class="max-h-screen snap-y snap-mandatory overflow-y-scroll">

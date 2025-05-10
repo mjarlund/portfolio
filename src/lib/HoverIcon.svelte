@@ -4,10 +4,10 @@
 
 	export let hoverIcon;
 	export let defaultIcon;
-	export let size = "32";
-	export let link = "#";
-	export let label = "";
-	export let color = "amber-500"
+	export let size = '32';
+	export let link = '#';
+	export let label = '';
+	export let color = 'amber-500';
 
 	let isHovering = writable(false);
 
@@ -20,13 +20,15 @@
 	}
 </script>
 
-<a href={link}
-	 class="text-{color}"
-	 aria-label={label}
-	 target={"_blank"}
-	 on:mouseover={handleMouseEnter}
-	 on:mouseout={handleMouseLeave}
-	 on:focus={handleMouseEnter}
-	 on:blur={handleMouseLeave}>
-	<Icon src={$isHovering ? hoverIcon : defaultIcon} size={size} />
+<a
+	href={link}
+	class="text-{color}"
+	aria-label={label}
+	target={'_blank'}
+	on:mouseover={handleMouseEnter}
+	on:mouseout={handleMouseLeave}
+	on:focus={handleMouseEnter}
+	on:blur={handleMouseLeave}
+>
+	<Icon src={$isHovering ? hoverIcon : defaultIcon} {size} />
 </a>
