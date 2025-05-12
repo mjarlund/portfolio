@@ -12,12 +12,12 @@
 
 <!-- Hero Section -->
 <section
-	class="h-screen bg-gray-800 flex flex-col items-center justify-center select-none snap-start snap-always"
+	class="flex h-screen snap-start snap-always flex-col items-center justify-center bg-gray-800 select-none"
 >
-	<div class="text-center p-6 container">
-		<h1 class="text-6xl text-amber-500 font-display">Mikkel Jarlund</h1>
-		<p class="text-3xl text-white mt-4">Software Engineer</p>
-		<p class="text-lg text-gray-200 mt-2">
+	<div class="container p-6 text-center">
+		<h1 class="font-display text-6xl text-amber-500">Mikkel Jarlund</h1>
+		<p class="mt-4 text-3xl text-white">Software Engineer</p>
+		<p class="mt-2 text-lg text-gray-200">
 			Crafting digital solutions with a blend of creativity and technical precision.
 		</p>
 
@@ -46,10 +46,10 @@
 
 <!-- About Me Section -->
 <section
-	class="h-screen bg-amber-100 flex flex-col items-center justify-center text-black p-6 snap-start snap-always"
+	class="flex h-screen snap-start snap-always flex-col items-center justify-center bg-amber-100 p-6 text-black"
 >
-	<div class="container max-w-4xl text-justify hyphens-auto flex flex-col gap-4">
-		<h2 class="text-center text-4xl font-display mb-4">About Me</h2>
+	<div class="container flex max-w-4xl flex-col gap-4 text-justify hyphens-auto">
+		<h2 class="font-display mb-4 text-center text-4xl">About Me</h2>
 		<p class="text-xl">
 			I hold a master's degree in software engineering and have extensive experience building web
 			applications. I enjoy the challenge of solving complex problems and creating solutions that

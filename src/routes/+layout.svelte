@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import '../app.css';
+
+	let { children } = $props();
 </script>
 
-<main class="max-h-screen snap-y snap-mandatory overflow-y-scroll">
-	<slot />
-</main>
+{@render children()}
