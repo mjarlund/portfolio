@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": "sveltekit",
+  "env": {
+    "ENABLE_SKILLS_SECTION": "false",
+    "ENABLE_EXPERIENCE_SECTION": "false", 
+    "ENABLE_EDUCATION_SECTION": "false",
+    "ENABLE_CONTACT_SECTION": "false"
+  }
+}
