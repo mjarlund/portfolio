@@ -1,56 +1,131 @@
 <script>
-	// Experience data (keeping details general to respect NDAs)
-	const experiences = [
+	// Combined timeline data - sorted chronologically
+	const timelineItems = [
 		{
-			period: "2020 - Present",
-			role: "Senior Software Engineer",
-			company: "Enterprise Technology Company",
-			description: "Leading development of scalable web applications and cloud solutions. Mentoring junior developers and contributing to architectural decisions.",
-			technologies: ["TypeScript", "React", "Node.js", "AWS", "Microservices"]
+			period: "Sep 2020 - Present",
+			title: "Software Pilot",
+			subtitle: "Trifork",
+			location: "Aalborg, North Jutland, Denmark",
+			description: "Leading development of scalable web applications and cloud solutions. Working with Representational State Transfer (REST), .NET Core and modern technologies.",
+			technologies: ["REST", ".NET Core", "C#", "Microservices", "Cloud Architecture"],
+			type: "experience"
 		},
 		{
 			period: "2018 - 2020",
-			role: "Full Stack Developer",
-			company: "Technology Startup",
-			description: "Built end-to-end web applications from concept to deployment. Worked closely with product teams to deliver user-focused solutions.",
-			technologies: ["JavaScript", "Vue.js", "Python", "PostgreSQL", "Docker"]
+			title: "Master of Science - MS",
+			subtitle: "Computer Software Engineering • Aalborg University",
+			location: "Aalborg, Denmark",
+			description: "Advanced studies in software engineering, system architecture, and modern development methodologies.",
+			technologies: [],
+			type: "education"
 		},
 		{
-			period: "2016 - 2018",
-			role: "Software Developer",
-			company: "Software Consultancy",
-			description: "Developed custom software solutions for various clients across different industries. Gained experience with diverse tech stacks and business requirements.",
-			technologies: ["C#", ".NET", "SQL Server", "Azure", "Angular"]
+			period: "Jul 2018 - Jun 2019",
+			title: "Student Programmer",
+			subtitle: "Aalborg University",
+			location: "Aalborg, North Jutland, Denmark",
+			description: "Worked as a student programmer while completing my studies, gaining practical experience in software development.",
+			technologies: ["C#", ".NET", "Software Development", "Academic Research"],
+			type: "experience"
+		},
+		{
+			period: "Mar 2017 - May 2020",
+			title: "Full-stack Developer",
+			subtitle: "Scanditek IT solutions ApS",
+			location: "Randers, Middle Jutland, Denmark",
+			description: "Built end-to-end web applications from concept to deployment. Worked closely with product teams to deliver user-focused solutions.",
+			technologies: ["JavaScript", "Vue.js", "Python", "PostgreSQL", "Docker"],
+			type: "experience"
+		},
+		{
+			period: "Sep 2016 - Sep 2019",
+			title: "Tutor",
+			subtitle: "Aalborg University",
+			location: "Aalborg, Denmark",
+			description: "Mentored and tutored fellow students in computer science subjects, helping them succeed in their studies.",
+			technologies: [],
+			type: "volunteering"
+		},
+		{
+			period: "2015 - 2018",
+			title: "Bachelor of Science - BS",
+			subtitle: "Computer Software Engineering • Aalborg University",
+			location: "Aalborg, Denmark",
+			description: "Foundational studies in computer science, software development, and engineering principles.",
+			technologies: [],
+			type: "education"
 		}
 	];
+
+	// Get styling based on type
+	function getItemStyling(type) {
+		switch(type) {
+			case 'experience':
+				return {
+					dotColor: 'bg-amber-500',
+					bgColor: 'bg-amber-50',
+					periodColor: 'text-amber-600',
+					techBg: 'bg-amber-100',
+					techText: 'text-amber-800'
+				};
+			case 'education':
+				return {
+					dotColor: 'bg-blue-500',
+					bgColor: 'bg-blue-50',
+					periodColor: 'text-blue-600',
+					techBg: 'bg-blue-100',
+					techText: 'text-blue-800'
+				};
+			case 'volunteering':
+				return {
+					dotColor: 'bg-green-500',
+					bgColor: 'bg-green-50',
+					periodColor: 'text-green-600',
+					techBg: 'bg-green-100',
+					techText: 'text-green-800'
+				};
+			default:
+				return {
+					dotColor: 'bg-gray-500',
+					bgColor: 'bg-gray-50',
+					periodColor: 'text-gray-600',
+					techBg: 'bg-gray-100',
+					techText: 'text-gray-800'
+				};
+		}
+	}
 </script>
 
-<!-- Experience Section -->
+<!-- Experience & Education Section -->
 <section class="flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-white p-6">
 	<div class="container mx-auto max-w-4xl">
-		<h2 class="font-display mb-12 text-center text-4xl text-gray-800">Experience</h2>
+		<h2 class="font-display mb-12 text-center text-4xl text-gray-800">Timeline</h2>
 		
 		<div class="relative">
 			<!-- Timeline line -->
-			<div class="absolute left-4 top-0 h-full w-0.5 bg-amber-500 md:left-1/2 md:transform md:-translate-x-1/2"></div>
+			<div class="absolute left-4 top-0 h-full w-0.5 bg-gray-300"></div>
 			
-			{#each experiences as exp, index}
-				<div class="relative mb-8 flex items-center">
+			{#each timelineItems as item, index}
+				{@const styling = getItemStyling(item.type)}
+				<div class="relative mb-8">
 					<!-- Timeline dot -->
-					<div class="absolute left-2 h-4 w-4 rounded-full bg-amber-500 md:left-1/2 md:transform md:-translate-x-1/2"></div>
+					<div class="absolute left-2 h-4 w-4 rounded-full {styling.dotColor}"></div>
 					
 					<!-- Content -->
-					<div class="ml-10 w-full md:ml-0 md:w-5/12 {index % 2 === 0 ? 'md:mr-auto md:pr-8 md:text-right' : 'md:ml-auto md:pl-8'}">
-						<div class="rounded-lg bg-gray-50 p-6 shadow-lg">
-							<div class="mb-2 text-sm font-bold text-amber-600">{exp.period}</div>
-							<h3 class="mb-1 text-xl font-bold text-gray-800">{exp.role}</h3>
-							<h4 class="mb-3 text-lg text-gray-600">{exp.company}</h4>
-							<p class="mb-4 text-gray-700">{exp.description}</p>
-							<div class="flex flex-wrap gap-2">
-								{#each exp.technologies as tech}
-									<span class="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-800">{tech}</span>
-								{/each}
-							</div>
+					<div class="ml-10">
+						<div class="rounded-lg {styling.bgColor} p-6 shadow-lg">
+							<div class="mb-2 text-sm font-bold {styling.periodColor}">{item.period}</div>
+							<h4 class="mb-1 text-lg font-bold text-gray-800">{item.title}</h4>
+							<h5 class="mb-1 text-md text-gray-600">{item.subtitle}</h5>
+							<div class="mb-3 text-sm text-gray-500">{item.location}</div>
+							<p class="mb-4 text-gray-700">{item.description}</p>
+							{#if item.technologies.length > 0}
+								<div class="flex flex-wrap gap-2">
+									{#each item.technologies as tech}
+										<span class="rounded-full {styling.techBg} px-3 py-1 text-sm {styling.techText}">{tech}</span>
+									{/each}
+								</div>
+							{/if}
 						</div>
 					</div>
 				</div>
