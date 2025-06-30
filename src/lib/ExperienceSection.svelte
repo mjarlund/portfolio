@@ -58,6 +58,9 @@
 	];
 
 	// Get styling based on type
+	/**
+	 * @param {'experience' | 'education' | 'volunteering' | string} type
+	 */
 	function getItemStyling(type) {
 		switch(type) {
 			case 'experience':
