@@ -7,4 +7,3 @@ export { default as SkillsSection } from './SkillsSection.svelte';
 export { default as ExperienceSection } from './ExperienceSection.svelte';
 export { default as EducationSection } from './EducationSection.svelte';
 export { default as ContactSection } from './ContactSection.svelte';
-export { default as FeatureFlagPanel } from './FeatureFlagPanel.svelte';

@@ -7,16 +7,12 @@
 		EducationSection,
 		ContactSection
 	} from '$lib';
-	import FeatureFlagPanel from '$lib/FeatureFlagPanel.svelte';
-	import { featureFlags } from '$lib/featureFlags.ts';
-	import { onMount } from 'svelte';
-
-	let flags;
-	$: flags = $featureFlags;
-
-	onMount(() => {
-		featureFlags.loadFromURL();
-	});
+	import {
+		PUBLIC_FEATURE_SKILLS_SECTION,
+		PUBLIC_FEATURE_EXPERIENCE_SECTION,
+		PUBLIC_FEATURE_EDUCATION_SECTION,
+		PUBLIC_FEATURE_CONTACT_SECTION
+	} from '$env/static/public';
 </script>
 
 <!-- Always show Hero and About -->
@@ -24,24 +20,18 @@
 <AboutSection />
 
 <!-- Conditionally show other sections based on feature flags -->
-{#if flags.showSkillsSection}
+{#if PUBLIC_FEATURE_SKILLS_SECTION == 'true'}
 	<SkillsSection />
 {/if}
 
-{#if flags.showExperienceSection}
+{#if PUBLIC_FEATURE_EXPERIENCE_SECTION == 'true'}
 	<ExperienceSection />
 {/if}
 
-{#if flags.showEducationSection}
+{#if PUBLIC_FEATURE_EDUCATION_SECTION == 'true'}
 	<EducationSection />
 {/if}
 
-{#if flags.showContactSection}
+{#if PUBLIC_FEATURE_CONTACT_SECTION == 'true'}
 	<ContactSection />
 {/if}
-
-<!-- Development feature flag panel -->
-<FeatureFlagPanel />
-
-<style lang="postcss">
-</style>

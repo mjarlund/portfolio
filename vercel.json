@@ -1,11 +1,11 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "framework": "sveltekit",
-  "env": {
-    "ENABLE_SKILLS_SECTION": "false",
-    "ENABLE_EXPERIENCE_SECTION": "false", 
-    "ENABLE_EDUCATION_SECTION": "false",
-    "ENABLE_CONTACT_SECTION": "false"
-  }
+    "buildCommand": "npm run build",
+    "outputDirectory": "build",
+    "framework": "sveltekit",
+    "env": {
+        "PUBLIC_FEATURE_SKILLS_SECTION": "false",
+        "PUBLIC_FEATURE_EXPERIENCE_SECTION": "false",
+        "PUBLIC_FEATURE_EDUCATION_SECTION": "false",
+        "PUBLIC_FEATURE_CONTACT_SECTION": "false"
+    }
 }
