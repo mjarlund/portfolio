@@ -1,12 +1,20 @@
 <script>
-	import { BuildingOffice, PuzzlePiece, Cog6Tooth } from 'svelte-hero-icons';
+	import { 
+		BuildingOffice, 
+		PuzzlePiece, 
+		Cog6Tooth,
+		Bolt,
+		CloudArrowUp,
+		ComputerDesktop,
+		ServerStack
+	} from 'svelte-hero-icons';
 	import { Icon } from 'svelte-hero-icons';
 
 	// Skills data
 	const skillCategories = [
 		{
 			title: 'Frontend',
-			emoji: '⚡',
+			icon: Bolt,
 			skills: [
 				{ name: 'TypeScript', level: 95 },
 				{ name: 'JavaScript', level: 95 },
@@ -19,7 +27,7 @@
 		},
 		{
 			title: 'Backend',
-			emoji: '⚙️',
+			icon: ServerStack,
 			skills: [
 				{ name: 'Node.js', level: 90 },
 				{ name: 'Python', level: 85 },
@@ -32,7 +40,7 @@
 		},
 		{
 			title: 'Cloud & DevOps',
-			emoji: '☁️',
+			icon: CloudArrowUp,
 			skills: [
 				{ name: 'AWS', level: 85 },
 				{ name: 'Azure', level: 80 },
@@ -45,7 +53,7 @@
 		},
 		{
 			title: 'Tools & Other',
-			emoji: '🧩',
+			icon: PuzzlePiece,
 			skills: [
 				{ name: 'Git', level: 95 },
 				{ name: 'PostgreSQL', level: 85 },
@@ -68,8 +76,8 @@
 			{#each skillCategories as category}
 				<div class="rounded-lg bg-gray-700 p-6 shadow-xl">
 					<div class="mb-6 flex items-center gap-3">
-						<div class="text-3xl">
-							{category.emoji}
+						<div class="text-amber-400">
+							<Icon src={category.icon} size="32" />
 						</div>
 						<h3 class="text-2xl font-bold text-white">{category.title}</h3>
 					</div>
@@ -99,25 +107,16 @@
 			<h3 class="mb-8 text-center text-3xl font-bold text-white">Professional Skills</h3>
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 				<div class="rounded-lg bg-gray-700 p-6 text-center">
-					<div class="mb-4 text-4xl">
-						🏢
-					</div>
 					<h4 class="mb-3 text-xl font-bold text-white">Technical Leadership</h4>
 					<p class="text-gray-300">Leading development teams and making architectural decisions for complex software systems.</p>
 				</div>
 				
 				<div class="rounded-lg bg-gray-700 p-6 text-center">
-					<div class="mb-4 text-4xl">
-						🧩
-					</div>
 					<h4 class="mb-3 text-xl font-bold text-white">Problem Solving</h4>
 					<p class="text-gray-300">Analyzing complex problems and designing efficient, scalable solutions.</p>
 				</div>
 				
 				<div class="rounded-lg bg-gray-700 p-6 text-center">
-					<div class="mb-4 text-4xl">
-						⚙️
-					</div>
 					<h4 class="mb-3 text-xl font-bold text-white">System Architecture</h4>
 					<p class="text-gray-300">Designing robust, maintainable systems with modern architectural patterns.</p>
 				</div>
