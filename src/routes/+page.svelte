@@ -2,15 +2,13 @@
 	import {
 		HeroSection,
 		AboutSection,
-		ExperienceSection,
-		EducationSection,
-		ContactSection
+		ExperienceSection
 	} from '$lib';
 	import {
-		PUBLIC_FEATURE_EXPERIENCE_SECTION,
-		PUBLIC_FEATURE_EDUCATION_SECTION,
-		PUBLIC_FEATURE_CONTACT_SECTION
+		PUBLIC_FEATURE_EXPERIENCE_SECTION
 	} from '$env/static/public';
+
+	export let data;
 </script>
 
 <!-- Always show Hero and About -->
@@ -19,13 +17,5 @@
 
 <!-- Conditionally show other sections based on feature flags -->
 {#if PUBLIC_FEATURE_EXPERIENCE_SECTION == 'true'}
-	<ExperienceSection />
-{/if}
-
-{#if PUBLIC_FEATURE_EDUCATION_SECTION == 'true'}
-	<EducationSection />
-{/if}
-
-{#if PUBLIC_FEATURE_CONTACT_SECTION == 'true'}
-	<ContactSection />
+	<ExperienceSection timelineData={data.timelineData} />
 {/if}

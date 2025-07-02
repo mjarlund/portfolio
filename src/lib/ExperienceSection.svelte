@@ -1,6 +1,10 @@
-<script>
-	// Combined timeline data - sorted chronologically
-	const timelineItems = [
+<script lang="ts">
+	import type { TimelineItem } from './services/linkedin';
+
+	export let timelineData: TimelineItem[] = [];
+
+	// Fallback data if no timeline data is provided
+	const fallbackData: TimelineItem[] = [
 		{
 			period: "Sep 2020 - Present",
 			title: "Software Pilot",
@@ -57,11 +61,11 @@
 		}
 	];
 
+	// Use provided data or fallback
+	const timelineItems = timelineData.length > 0 ? timelineData : fallbackData;
+
 	// Get styling based on type
-	/**
-	 * @param {'experience' | 'education' | 'volunteering' | string} type
-	 */
-	function getItemStyling(type) {
+	function getItemStyling(type: TimelineItem['type']) {
 		switch(type) {
 			case 'experience':
 				return {
@@ -100,9 +104,9 @@
 </script>
 
 <!-- Experience & Education Section -->
-<section class="flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-white p-6">
-	<div class="container mx-auto max-w-4xl">
-		<h2 class="font-display mb-12 text-center text-4xl text-gray-800">Timeline</h2>
+<section class="flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-gray-800 p-6">
+	<div class="container mx-auto max-w-4xl text-white">
+		<h2 class="font-display mb-12 text-center text-4xl text-amber-500">Timeline</h2>
 		
 		<div class="relative">
 			<!-- Timeline line -->
