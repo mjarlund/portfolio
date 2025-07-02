@@ -6,3 +6,4 @@ export { default as ExperienceSection } from './ExperienceSection.svelte';
 // UI Components
 export { default as Section } from './ui/Section.svelte';
 export { default as HoverIcon } from './ui/HoverIcon.svelte';
+export { default as Container } from './ui/Container.svelte';

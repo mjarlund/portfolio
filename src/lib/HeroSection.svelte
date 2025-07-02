@@ -8,18 +8,19 @@
 		BuildingOffice2
 	} from 'svelte-hero-icons';
 	import { HoverIcon, Section } from '$lib';
+	import Container from './ui/Container.svelte';
 </script>
 
 <!-- Hero Section -->
 <Section variant="primary">
-	<div class="container text-center">
+	<Container>
 		<h1 class="font-display text-6xl text-amber-500">Mikkel Jarlund</h1>
 		<p class="mt-4 text-3xl text-white">Software Engineer</p>
 		<p class="mt-2 text-lg text-gray-200">
 			Crafting digital solutions with a blend of creativity and technical precision.
 		</p>
 
-		<div class="mt-4 inline-flex gap-3">
+		<div class="mt-4 inline-flex gap-3 mx-auto">
 			<HoverIcon
 				href="mailto:mail@mjarlund.dk"
 				label="Email Mikkel"
@@ -39,5 +40,5 @@
 				hoverIcon={CommandLine}
 			/>
 		</div>
-	</div>
+	</Container>
 </Section>

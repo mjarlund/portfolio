@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { TimelineItem } from './services/linkedin';
 	import { Section } from '$lib';
+	import Container from '$lib/ui/Container.svelte';
 
 	export let timelineData: TimelineItem[] = [];
 
@@ -106,7 +107,7 @@
 
 <!-- Experience & Education Section -->
 <Section variant="primary" size="min-screen">
-	<div class="container mx-auto max-w-4xl text-white">
+	<Container>
 		<h2 class="font-display mb-12 text-center text-4xl text-amber-500">Timeline</h2>
 		
 		<div class="relative">
@@ -139,5 +140,5 @@
 				</div>
 			{/each}
 		</div>
-	</div>
+	</Container>
 </Section>
