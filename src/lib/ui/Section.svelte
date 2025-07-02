@@ -23,7 +23,7 @@
 
 	$: sectionClasses = cn(
 		// Base styles
-		'flex snap-start snap-always flex-col items-center justify-center p-6',
+		'flex snap-center snap-always flex-col items-center justify-center p-6',
 		// Size variant
 		sizeStyles[size],
 		// Color variant
