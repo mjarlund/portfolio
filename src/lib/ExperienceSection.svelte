@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { TimelineItem } from './services/linkedin';
+	import { Section } from '$lib';
 
 	export let timelineData: TimelineItem[] = [];
 
@@ -104,7 +105,7 @@
 </script>
 
 <!-- Experience & Education Section -->
-<section class="flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-gray-800 p-6">
+<Section variant="primary" size="min-screen">
 	<div class="container mx-auto max-w-4xl text-white">
 		<h2 class="font-display mb-12 text-center text-4xl text-amber-500">Timeline</h2>
 		
@@ -139,4 +140,4 @@
 			{/each}
 		</div>
 	</div>
-</section>
+</Section>

@@ -1,3 +1,7 @@
+<script>
+	import { Section } from '$lib';
+</script>
+
 <svelte:head>
 	<title>Invitation - Maria & Mikkel's 30-års fest</title>
 	<meta
@@ -12,9 +16,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<section
-	class="flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-amber-100 p-6"
->
+<Section variant="secondary" size="min-screen">
 	<div class="container mx-auto flex max-w-4xl flex-col gap-6 rounded-lg bg-white p-8 shadow-xl">
 		<div class="text-center">
 			<h1 class="font-display mb-2 text-4xl text-amber-500">🎉 Invitation 🎉</h1>
@@ -32,4 +34,4 @@
 			</p>
 		</div>
 	</div>
-</section>
+</Section>
