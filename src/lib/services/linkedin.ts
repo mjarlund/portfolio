@@ -153,12 +153,12 @@ class LinkedInService {
 			}
 
 			return positionsElement.snapshotData.map((position: any) => ({
-				period: this.formatPeriod(position['Start Date'], position['End Date']),
+				period: this.formatPeriod(position['Started On'], position['Finished On']),
 				title: position['Title'] || position['Position'] || 'Position',
 				subtitle: position['Company Name'] || position['Company'] || 'Company',
 				location: position['Location'] || '',
 				description: position['Description'] || position['Summary'] || '',
-				technologies: [], // LinkedIn API doesn't provide this, would need to be manually added
+				technologies: [], 
 				type: 'experience' as const
 			}));
 		} catch (error) {
@@ -219,9 +219,9 @@ class LinkedInService {
 			}
 
 			return volunteerElement.snapshotData.map((volunteer: any) => ({
-				period: this.formatPeriod(volunteer['Start Date'], volunteer['End Date']),
+				period: this.formatPeriod(volunteer['Started On'], volunteer['Finished On']),
 				title: volunteer['Role'] || volunteer['Position'] || 'Volunteer',
-				subtitle: volunteer['Organization'] || volunteer['Company'] || 'Organization',
+				subtitle: volunteer['Company Name'] || volunteer['Company'] || 'Organization',
 				location: volunteer['Location'] || '',
 				description: volunteer['Description'] || volunteer['Summary'] || '',
 				technologies: [],
