@@ -1,5 +1,6 @@
 import { LINKEDIN_ACCESS_TOKEN } from '$env/static/private';
 import type { LinkedInDate } from '../types/linkedin';
+import { redisService } from './redis';
 
 const LINKEDIN_API_BASE = 'https://api.linkedin.com/rest';
 
@@ -36,12 +37,32 @@ export interface TimelineItem {
 
 class LinkedInService {
 	private accessToken: string;
+	private cachePrefix = 'linkedin:';
+	private defaultCacheTtl = 3600; // 1 hour in seconds
 
 	constructor() {
 		this.accessToken = LINKEDIN_ACCESS_TOKEN;
 	}
 
+	private getCacheKey(endpoint: string, params: URLSearchParams): string {
+		const paramString = params.toString();
+		return `${this.cachePrefix}${endpoint}:${paramString}`;
+	}
+
 	private async makeRequest(endpoint: string, params: URLSearchParams = new URLSearchParams()): Promise<LinkedInSnapshotResponse> {
+		const cacheKey = this.getCacheKey(endpoint, params);
+		
+		// Try to get cached data first
+		try {
+			const cachedData = await redisService.get<LinkedInSnapshotResponse>(cacheKey);
+			if (cachedData) {
+				console.log(`Cache hit for ${cacheKey}`);
+				return cachedData;
+			}
+		} catch (error) {
+			console.warn('Cache read failed, proceeding with API call:', error);
+		}
+
 		const url = `${LINKEDIN_API_BASE}${endpoint}?${params.toString()}`;
 		
 		const response = await fetch(url, {
@@ -56,7 +77,17 @@ class LinkedInService {
 			throw new Error(`LinkedIn API error: ${response.status} ${response.statusText}`);
 		}
 
-		return await response.json();
+		const data = await response.json();
+
+		// Cache the successful response
+		try {
+			await redisService.set(cacheKey, data, this.defaultCacheTtl);
+			console.log(`Cached data for ${cacheKey}`);
+		} catch (error) {
+			console.warn('Cache write failed:', error);
+		}
+
+		return data;
 	}
 
 	private formatPeriod(startDate: LinkedInDate | string | undefined, endDate?: LinkedInDate | string): string {
@@ -79,6 +110,26 @@ class LinkedInService {
 		const end = endDate ? formatDate(endDate) : 'Present';
 		
 		return `${start} - ${end}`;
+	}
+
+	// Cache management methods
+	async clearCache(): Promise<void> {
+		try {
+			const keys = [
+				this.getCacheKey('/memberSnapshotData', new URLSearchParams({ 'q': 'criteria', 'domain': 'POSITIONS' })),
+				this.getCacheKey('/memberSnapshotData', new URLSearchParams({ 'q': 'criteria', 'domain': 'EDUCATION' })),
+				this.getCacheKey('/memberSnapshotData', new URLSearchParams({ 'q': 'criteria', 'domain': 'VOLUNTEERING_EXPERIENCES' }))
+			];
+
+			await Promise.all(keys.map(key => redisService.del(key)));
+			console.log('LinkedIn cache cleared');
+		} catch (error) {
+			console.error('Error clearing LinkedIn cache:', error);
+		}
+	}
+
+	async setCacheTtl(ttlSeconds: number): Promise<void> {
+		this.defaultCacheTtl = ttlSeconds;
 	}
 
 	async getPositions(): Promise<TimelineItem[]> {
@@ -192,7 +243,7 @@ class LinkedInService {
 				// Try to extract the first date from the period string
 				const match = item.period.match(/^([A-Za-z]{3})? ?(\d{4})/);
 				if (match) {
-					const month = match[1] ? ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'].indexOf(match[1]) : 0;
+					const month = match[1] ? MONTHS.indexOf(match[1]) : 0;
 					const year = parseInt(match[2]);
 					return new Date(year, month >= 0 ? month : 0, 1);
 				}
