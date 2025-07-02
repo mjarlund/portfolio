@@ -1,6 +1,10 @@
-<script>
-	// Combined timeline data - sorted chronologically
-	const timelineItems = [
+<script lang="ts">
+	import type { TimelineItem } from './services/linkedin';
+
+	export let timelineData: TimelineItem[] = [];
+
+	// Fallback data if no timeline data is provided
+	const fallbackData: TimelineItem[] = [
 		{
 			period: "Sep 2020 - Present",
 			title: "Software Pilot",
@@ -57,11 +61,11 @@
 		}
 	];
 
+	// Use provided data or fallback
+	const timelineItems = timelineData.length > 0 ? timelineData : fallbackData;
+
 	// Get styling based on type
-	/**
-	 * @param {'experience' | 'education' | 'volunteering' | string} type
-	 */
-	function getItemStyling(type) {
+	function getItemStyling(type: TimelineItem['type']) {
 		switch(type) {
 			case 'experience':
 				return {

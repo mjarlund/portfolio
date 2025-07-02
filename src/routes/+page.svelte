@@ -11,6 +11,8 @@
 		PUBLIC_FEATURE_EDUCATION_SECTION,
 		PUBLIC_FEATURE_CONTACT_SECTION
 	} from '$env/static/public';
+
+	export let data;
 </script>
 
 <!-- Always show Hero and About -->
@@ -19,7 +21,7 @@
 
 <!-- Conditionally show other sections based on feature flags -->
 {#if PUBLIC_FEATURE_EXPERIENCE_SECTION == 'true'}
-	<ExperienceSection />
+	<ExperienceSection timelineData={data.timelineData} />
 {/if}
 
 {#if PUBLIC_FEATURE_EDUCATION_SECTION == 'true'}
