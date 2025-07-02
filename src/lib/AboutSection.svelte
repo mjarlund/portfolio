@@ -5,7 +5,7 @@
 
 <!-- About Me Section -->
 <Section variant="secondary">
-	<Container text="text-justify">
+	<Container text="text-left">
 		<h2 class="font-display mb-4 text-center text-4xl">About Me</h2>
 		<p class="text-xl">
 			I hold a master's degree in software engineering and have extensive experience building web
