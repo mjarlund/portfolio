@@ -1,4 +1,4 @@
-import { LINKEDIN_ACCESS_TOKEN } from '$env/static/private';
+import { LINKEDIN_ACCESS_TOKEN, LINKEDIN_CACHE_TTL } from '$env/static/private';
 import type { LinkedInDate } from '../types/linkedin';
 import { redisService } from './redis';
 
@@ -38,10 +38,12 @@ export interface TimelineItem {
 class LinkedInService {
 	private accessToken: string;
 	private cachePrefix = 'linkedin:';
-	private defaultCacheTtl = 3600; // 1 hour in seconds
+	private defaultCacheTtl: number;
 
 	constructor() {
 		this.accessToken = LINKEDIN_ACCESS_TOKEN;
+		// Use environment variable if available, otherwise default to 1 hour (3600 seconds)
+		this.defaultCacheTtl = LINKEDIN_CACHE_TTL ? parseInt(LINKEDIN_CACHE_TTL, 10) : 3600;
 	}
 
 	private getCacheKey(endpoint: string, params: URLSearchParams): string {
