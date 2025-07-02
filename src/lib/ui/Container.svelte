@@ -10,7 +10,6 @@ export let flex: boolean | string = true;
 export let flexDir: string = 'flex-col';
 export let gap: string | false = 'gap-4';
 export let text: 'text-justify' | 'text-center' | false = 'text-center';
-export let hyphens: string | false = 'hyphens-auto';
 export let p: string | false = false;
 export let m: string | false = false;
 export let rounded: string | false = false;
@@ -30,7 +29,6 @@ $: containerClasses = cn(
 	maxWidth && maxWidth,
 	gap && gap,
 	text && text,
-	hyphens && hyphens,
 	p && p,
 	m && m,
 	rounded && rounded,
