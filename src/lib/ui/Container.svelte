@@ -10,6 +10,7 @@ export let flex: boolean | string = true;
 export let flexDir: string = 'flex-col';
 export let gap: string | false = 'gap-4';
 export let text: 'text-justify' | 'text-center' | 'text-left' | false = 'text-center';
+export let hyphens: string | false = false;
 export let p: string | false = false;
 export let m: string | false = false;
 export let rounded: string | false = false;
@@ -22,17 +23,18 @@ const variantStyles = {
 };
 
 $: containerClasses = cn(
-	container && 'container',
-	variant && variantStyles[variant],
-	flex && (typeof flex === 'string' ? flex : 'flex'),
-	flex && flexDir,
-	maxWidth && maxWidth,
-	gap && gap,
-	text && text,
-	p && p,
-	m && m,
-	rounded && rounded,
-	className
+	   container && 'container',
+	   variant && variantStyles[variant],
+	   flex && (typeof flex === 'string' ? flex : 'flex'),
+	   flex && flexDir,
+	   maxWidth && maxWidth,
+	   gap && gap,
+	   text && text,
+	   (text === 'text-justify' && (hyphens || 'hyphens-auto')),
+	   p && p,
+	   m && m,
+	   rounded && rounded,
+	   className
 );
 </script>
 
