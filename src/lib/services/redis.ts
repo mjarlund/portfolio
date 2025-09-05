@@ -16,11 +16,6 @@ class RedisService {
 			return this.connectionPromise;
 		}
 
-		// If a connection is already in progress, wait for it
-		if (this.connectionPromise) {
-			return this.connectionPromise;
-		}
-
 		// Create a new connection promise
 		this.connectionPromise = this.createConnection();
 		
