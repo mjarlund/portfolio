@@ -1,11 +1,9 @@
 <script>
 	import {
 		HeroSection,
-		AboutSection,
-		ExperienceSection
+		AboutSection
 	} from '$lib';
 
-	export let data;
 </script>
 
 <!-- Always show Hero and About -->
