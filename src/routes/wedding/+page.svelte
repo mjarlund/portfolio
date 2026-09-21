@@ -150,7 +150,12 @@
 		<div class="wish-inner">
 			<h2>Ønskeliste</h2>
 			<p class="wish-text">Jeres tilstedeværelse er den bedste gave. Men ønsker I alligevel at give os noget, har vi oprettet en ønskeliste.</p>
-			<a class="seal" href="https://ønskeskyen.dk" target="_blank" rel="noopener noreferrer">Se<br />ønskelisten</a>
+			<a
+			class="seal"
+			href="https://onskeskyen.dk/da/wishlists/lBLT1cBSmfaKQdoQ"
+			target="_blank"
+			rel="noopener noreferrer">Se<br />ønskelisten</a
+		>
 		</div>
 	</section>
 
