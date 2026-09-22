@@ -202,6 +202,8 @@
 	/* ---------- HERO ---------- */
 	.hero {
 		position: relative;
+		max-width: 1600px;
+		margin: 0 auto;
 		min-height: clamp(480px, 88vh, 760px);
 		display: flex;
 		align-items: flex-end;
