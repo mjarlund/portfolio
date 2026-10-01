@@ -17,7 +17,7 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={site.url} />
-	<meta property="og:image" content="{site.url}/preview.png" />
+	<meta property="og:image" content="{site.url}/preview-v2.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="{site.name} — {site.jobTitle}" />

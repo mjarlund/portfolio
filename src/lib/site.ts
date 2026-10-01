@@ -16,7 +16,7 @@ export const personJsonLd = {
 	url: site.url,
 	jobTitle: site.jobTitle,
 	description: site.tagline,
-	image: `${site.url}/preview.png`,
+	image: `${site.url}/preview-v2.png`,
 	knowsAbout: ['.NET', 'C#', 'Cloud computing', 'Mobile development', 'Artificial intelligence'],
 	sameAs: [site.linkedin, site.github]
 };
