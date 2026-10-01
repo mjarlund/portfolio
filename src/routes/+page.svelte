@@ -18,6 +18,8 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={site.url} />
 	<meta property="og:image" content="{site.url}/preview.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="{site.name} — {site.jobTitle}" />
 	<meta property="profile:first_name" content="Mikkel" />
 	<meta property="profile:last_name" content="Jarlund" />
