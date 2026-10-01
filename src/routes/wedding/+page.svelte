@@ -1,5 +1,22 @@
+<script>
+	import { site } from '$lib/site';
+</script>
+
 <svelte:head>
 	<title>Maria &amp; Mikkel – Vores bryllup</title>
+	<meta name="robots" content="noindex" />
+	<meta
+		name="description"
+		content="Maria &amp; Mikkel inviterer til kirkelig velsignelse og fest lørdag den 22. maj 2027."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Maria &amp; Mikkel – Vores bryllup" />
+	<meta
+		property="og:description"
+		content="Maria &amp; Mikkel inviterer til kirkelig velsignelse og fest lørdag den 22. maj 2027."
+	/>
+	<meta property="og:url" content="{site.url}/wedding" />
+	<meta property="og:image" content="{site.url}/wedding/hero.webp" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 	<link

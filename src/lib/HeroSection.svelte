@@ -9,32 +9,34 @@
 	} from 'svelte-hero-icons';
 	import { HoverIcon, Section } from '$lib';
 	import Container from './ui/Container.svelte';
+	import { site } from './site';
 </script>
 
 <!-- Hero Section -->
 <Section variant="primary">
 	<Container>
-		<h1 class="font-display text-6xl text-amber-500">Mikkel Jarlund</h1>
-		<p class="mt-4 text-3xl text-white">Software Engineer</p>
-		<p class="mt-2 text-lg text-gray-200">
-			Crafting digital solutions with a blend of creativity and technical precision.
-		</p>
+		<h1>
+			<span class="font-display block text-6xl text-amber-500">{site.name}</span>
+			<span class="sr-only"> — </span>
+			<span class="mt-4 block text-3xl font-normal text-white">{site.jobTitle}</span>
+		</h1>
+		<p class="mt-2 text-lg text-gray-200">{site.tagline}</p>
 
 		<div class="mt-4 inline-flex gap-3 mx-auto">
 			<HoverIcon
-				href="mailto:mail@mjarlund.dk"
+				href="mailto:{site.email}"
 				label="Email Mikkel"
 				defaultIcon={Envelope}
 				hoverIcon={EnvelopeOpen}
 			/>
 			<HoverIcon
-				href="https://www.linkedin.com/in/mjarlund"
+				href={site.linkedin}
 				label="Mikkel's LinkedIn profile"
 				defaultIcon={BuildingOffice}
 				hoverIcon={BuildingOffice2}
 			/>
 			<HoverIcon
-				href="https://github.com/mjarlund"
+				href={site.github}
 				label="Mikkel's GitHub profile"
 				defaultIcon={CodeBracketSquare}
 				hoverIcon={CommandLine}
