@@ -11,6 +11,7 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
+	<meta name="author" content={site.name} />
 	<link rel="canonical" href={site.url} />
 	<meta property="og:type" content="profile" />
 	<meta property="og:site_name" content={site.name} />
