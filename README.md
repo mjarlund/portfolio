@@ -1,6 +1,6 @@
 # Mikkel Jarlund, Portfolio
 
-The source for my personal site at [mjarlund.dk](https://www.mjarlund.dk).
+The source for my personal site at [mjarlund.dk](https://mjarlund.dk).
 
 ![Preview](static/preview-v2.png)
 

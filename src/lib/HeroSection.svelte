@@ -28,6 +28,7 @@
 				label="Email Mikkel"
 				defaultIcon={Envelope}
 				hoverIcon={EnvelopeOpen}
+				external={false}
 			/>
 			<HoverIcon
 				href={site.linkedin}

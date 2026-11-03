@@ -1,5 +1,5 @@
 export const site = {
-	url: 'https://www.mjarlund.dk',
+	url: 'https://mjarlund.dk',
 	name: 'Mikkel Jarlund',
 	jobTitle: 'Software Engineer',
 	tagline: 'I build software products and systems, primarily across .NET, cloud, mobile and AI.',
