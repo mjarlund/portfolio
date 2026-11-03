@@ -15,7 +15,7 @@ A small, fast, pre-rendered one-pager: a short introduction, what I work on, and
 
 ## Development
 
-Requires Node.js 20 or newer.
+Requires Node.js 20.19 or newer.
 
 ```bash
 npm ci
