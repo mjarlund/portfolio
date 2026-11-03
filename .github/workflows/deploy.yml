@@ -20,16 +20,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to Caddy
-        env:
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
-          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-          # The self-hosted runner is Windows; stop Git Bash rewriting the
-          # remote absolute path into a local C:/Program Files/Git path.
-          MSYS_NO_PATHCONV: '1'
-          MSYS2_ARG_CONV_EXCL: '*'
         run: |
+          # LAN address of the Caddy host, not reachable from the internet.
           rsync -av --delete \
             -e "ssh -i ~/.ssh/mjarlund_deploy" \
             ./build/ \
-            "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"
+            deploy@192.168.1.190:/var/www/portfolio/

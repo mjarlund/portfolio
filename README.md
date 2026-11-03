@@ -52,11 +52,7 @@ static/                   Icons, preview image, robots.txt, sitemap.xml
 
 ## Deployment
 
-Pushes to `main` build the site and rsync it to a Caddy server from a self-hosted GitHub Actions runner. The workflow reads three repository secrets:
-
-- `DEPLOY_HOST`
-- `DEPLOY_USER`
-- `DEPLOY_PATH`
+Pushes to `main` build the site and rsync it to a Caddy server from a self-hosted GitHub Actions runner on the local network.
 
 ## License
 
