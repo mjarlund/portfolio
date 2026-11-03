@@ -10,8 +10,8 @@
 	export { className as class };
 
 	const variantStyles: Record<SectionVariant, string> = {
-        primary: 'bg-gray-800 text-white',
-        secondary: 'bg-amber-100 text-gray-900',
+		primary: 'bg-gray-800 text-white',
+		secondary: 'bg-amber-100 text-gray-900',
 		default: 'bg-white text-gray-900'
 	};
 

@@ -123,7 +123,11 @@
 				<div>
 					<h3>Danhostel Rønde</h3>
 					<p>Grenåvej 10 B, 8410 Rønde · vandrehjem med udsigt over Kalø Vig</p>
-					<p><a href="https://danhostelronde.dk" target="_blank" rel="noopener noreferrer">Se mere →</a></p>
+					<p>
+						<a href="https://danhostelronde.dk" target="_blank" rel="noopener noreferrer"
+							>Se mere →</a
+						>
+					</p>
 				</div>
 				<div class="postmark">Rønde<br />8410</div>
 			</div>
@@ -144,8 +148,14 @@
 			<div class="postcard">
 				<div>
 					<h3>Lergravgaard</h3>
-					<p>Strandvejen 154, 8410 Rønde · bed &amp; breakfast og ferielejligheder, ca. 5 min. fra festen</p>
-					<p><a href="https://lergravgaard.dk" target="_blank" rel="noopener noreferrer">Se mere →</a></p>
+					<p>
+						Strandvejen 154, 8410 Rønde · bed &amp; breakfast og ferielejligheder, ca. 5 min. fra
+						festen
+					</p>
+					<p>
+						<a href="https://lergravgaard.dk" target="_blank" rel="noopener noreferrer">Se mere →</a
+						>
+					</p>
 				</div>
 				<div class="postmark">Rønde<br />8410</div>
 			</div>
@@ -166,13 +176,16 @@
 	<section id="wishlist" class="section on-cream">
 		<div class="wish-inner">
 			<h2>Ønskeliste</h2>
-			<p class="wish-text">Jeres tilstedeværelse er den bedste gave. Men ønsker I alligevel at give os noget, har vi oprettet en ønskeliste.</p>
+			<p class="wish-text">
+				Jeres tilstedeværelse er den bedste gave. Men ønsker I alligevel at give os noget, har vi
+				oprettet en ønskeliste.
+			</p>
 			<a
-			class="seal"
-			href="https://onskeskyen.dk/da/wishlists/lBLT1cBSmfaKQdoQ"
-			target="_blank"
-			rel="noopener noreferrer">Se<br />ønskelisten</a
-		>
+				class="seal"
+				href="https://onskeskyen.dk/da/wishlists/lBLT1cBSmfaKQdoQ"
+				target="_blank"
+				rel="noopener noreferrer">Se<br />ønskelisten</a
+			>
 		</div>
 	</section>
 
@@ -301,7 +314,9 @@
 		text-decoration: none;
 		border-bottom: 1px solid transparent;
 		padding-bottom: 0.15rem;
-		transition: border-color 0.2s ease, color 0.2s ease;
+		transition:
+			border-color 0.2s ease,
+			color 0.2s ease;
 	}
 	.quicklinks a:hover,
 	.quicklinks a:focus-visible {

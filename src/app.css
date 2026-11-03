@@ -3,6 +3,6 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-    --font-display: "Pacifico", "sans-serif";
-    --font-sans: "Fira Sans", "sans-serif";
+	--font-display: 'Pacifico', 'sans-serif';
+	--font-sans: 'Fira Sans', 'sans-serif';
 }

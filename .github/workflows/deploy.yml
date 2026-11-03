@@ -20,8 +20,12 @@ jobs:
         run: npm run build
 
       - name: Deploy to Caddy
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
           rsync -av --delete \
             -e "ssh -i ~/.ssh/mjarlund_deploy" \
             ./build/ \
-            deploy@192.168.1.190:/var/www/portfolio/
+            "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"

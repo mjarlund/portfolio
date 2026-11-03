@@ -2,7 +2,7 @@
 	import { HeroSection, AboutSection } from '$lib';
 	import { site, personJsonLd } from '$lib/site';
 
-	const title = `${site.name} — ${site.jobTitle}`;
+	const title = `${site.name} | ${site.jobTitle}`;
 	const description = `${site.name} is a software engineer. ${site.tagline}`;
 	// Escape "<" so the JSON can never close the script tag early.
 	const jsonLd = JSON.stringify(personJsonLd).replace(/</g, '\\u003c');
@@ -21,11 +21,12 @@
 	<meta property="og:image" content="{site.url}/preview-v2.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="{site.name} — {site.jobTitle}" />
+	<meta property="og:image:alt" content="{site.name} | {site.jobTitle}" />
 	<meta property="profile:first_name" content="Mikkel" />
 	<meta property="profile:last_name" content="Jarlund" />
 	<meta name="twitter:card" content="summary_large_image" />
-	{@html `<script type="application/ld+json">${jsonLd}</script>`}
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- JSON-LD is escaped above -->
+	{@html `<script type="application/ld+json">${jsonLd}<` + `/script>`}
 </svelte:head>
 
 <HeroSection />

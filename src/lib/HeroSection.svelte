@@ -17,12 +17,12 @@
 	<Container>
 		<h1>
 			<span class="font-display block text-6xl text-amber-500">{site.name}</span>
-			<span class="sr-only"> — </span>
+			<span class="sr-only">, </span>
 			<span class="mt-4 block text-3xl font-normal text-white">{site.jobTitle}</span>
 		</h1>
 		<p class="mt-2 text-lg text-gray-200">{site.tagline}</p>
 
-		<div class="mt-4 inline-flex gap-3 mx-auto">
+		<div class="mx-auto mt-4 inline-flex gap-3">
 			<HoverIcon
 				href="mailto:{site.email}"
 				label="Email Mikkel"

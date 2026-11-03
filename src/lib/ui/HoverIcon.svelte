@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import { Icon } from 'svelte-hero-icons';
+	import { Icon, type IconSource } from 'svelte-hero-icons';
 
 	export let href: string = '#';
-	export let defaultIcon: any;
-	export let hoverIcon: any;
+	export let defaultIcon: IconSource;
+	export let hoverIcon: IconSource;
 	export let variant: 'default' | 'primary' | 'secondary' | 'muted' = 'primary';
 	export let size: 'sm' | 'md' | 'lg' | 'xl' = 'lg';
 	export let label: string = '';

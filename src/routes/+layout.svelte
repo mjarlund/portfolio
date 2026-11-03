@@ -4,6 +4,6 @@
 	let { children } = $props();
 </script>
 
-<main class="snap-y overflow-y-scroll h-screen snap-mandatory">
+<main class="h-screen snap-y snap-mandatory overflow-y-scroll">
 	{@render children()}
 </main>
