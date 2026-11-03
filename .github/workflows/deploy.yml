@@ -24,6 +24,10 @@ jobs:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          # The self-hosted runner is Windows; stop Git Bash rewriting the
+          # remote absolute path into a local C:/Program Files/Git path.
+          MSYS_NO_PATHCONV: '1'
+          MSYS2_ARG_CONV_EXCL: '*'
         run: |
           rsync -av --delete \
             -e "ssh -i ~/.ssh/mjarlund_deploy" \
