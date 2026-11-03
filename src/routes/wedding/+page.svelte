@@ -32,9 +32,9 @@
 			<h1>Maria<em>&amp;</em>Mikkel</h1>
 			<p class="date">Lørdag den 22. maj 2027</p>
 			<p class="story">
-				Vi sagde ja til hinanden på rådhuset i Ebeltoft – nu vil vi gerne velsignes i kirken og
-				endelig holde den fest, vi ikke nåede dengang. Vi glæder os til at fejre det med jer, som
-				betyder allermest.
+				Vi sagde ja til hinanden på rådhuset i Ebeltoft – nu vil vi gerne velsignes i kirken
+				og endelig holde den fest, vi ikke nåede dengang. Vi glæder os til at fejre det med
+				jer, som betyder allermest.
 			</p>
 		</div>
 	</header>
@@ -124,8 +124,10 @@
 					<h3>Danhostel Rønde</h3>
 					<p>Grenåvej 10 B, 8410 Rønde · vandrehjem med udsigt over Kalø Vig</p>
 					<p>
-						<a href="https://danhostelronde.dk" target="_blank" rel="noopener noreferrer"
-							>Se mere →</a
+						<a
+							href="https://danhostelronde.dk"
+							target="_blank"
+							rel="noopener noreferrer">Se mere →</a
 						>
 					</p>
 				</div>
@@ -149,11 +151,12 @@
 				<div>
 					<h3>Lergravgaard</h3>
 					<p>
-						Strandvejen 154, 8410 Rønde · bed &amp; breakfast og ferielejligheder, ca. 5 min. fra
-						festen
+						Strandvejen 154, 8410 Rønde · bed &amp; breakfast og ferielejligheder, ca. 5
+						min. fra festen
 					</p>
 					<p>
-						<a href="https://lergravgaard.dk" target="_blank" rel="noopener noreferrer">Se mere →</a
+						<a href="https://lergravgaard.dk" target="_blank" rel="noopener noreferrer"
+							>Se mere →</a
 						>
 					</p>
 				</div>
@@ -177,8 +180,8 @@
 		<div class="wish-inner">
 			<h2>Ønskeliste</h2>
 			<p class="wish-text">
-				Jeres tilstedeværelse er den bedste gave. Men ønsker I alligevel at give os noget, har vi
-				oprettet en ønskeliste.
+				Jeres tilstedeværelse er den bedste gave. Men ønsker I alligevel at give os noget,
+				har vi oprettet en ønskeliste.
 			</p>
 			<a
 				class="seal"

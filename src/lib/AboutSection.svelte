@@ -13,9 +13,9 @@
 			solutions that are both effective and efficient.
 		</p>
 		<p class="text-xl">
-			When I'm away from the keyboard, I enjoy traveling or spending quality time with family and
-			friends. Otherwise, I'm usually busy working on my home server and Home Assistant setup,
-			continuously enhancing the smart capabilities of my home.
+			When I'm away from the keyboard, I enjoy traveling or spending quality time with family
+			and friends. Otherwise, I'm usually busy working on my home server and Home Assistant
+			setup, continuously enhancing the smart capabilities of my home.
 		</p>
 	</Container>
 </Section>

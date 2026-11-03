@@ -1,5 +1,7 @@
 # Mikkel Jarlund, Portfolio
 
+[![CI](https://github.com/mjarlund/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/mjarlund/portfolio/actions/workflows/ci.yml)
+
 The source for my personal site at [mjarlund.dk](https://mjarlund.dk).
 
 ![Preview](static/preview-v2.png)

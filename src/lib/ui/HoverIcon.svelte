@@ -30,6 +30,7 @@
 	$: iconClasses = cn(
 		'inline-flex items-center justify-center transition-colors duration-200',
 		'rounded-md p-1 -m-1',
+		'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500',
 		getVariantStyles(variant)
 	);
 
