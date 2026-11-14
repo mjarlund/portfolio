@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,10 +27,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Caddy
-        run: |
-          # LAN address of the Caddy host, not reachable from the internet.
-          rsync -av --delete \
-            -e "ssh -i ~/.ssh/mjarlund_deploy" \
-            ./build/ \
-            deploy@192.168.1.190:/var/www/portfolio/
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy build --project-name=mjarlund-dk --branch=main
