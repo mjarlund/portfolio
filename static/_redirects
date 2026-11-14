@@ -1,0 +1,3 @@
+# Invitations were printed before the route was renamed.
+/wedding /bryllup 301
+/wedding/* /bryllup 301

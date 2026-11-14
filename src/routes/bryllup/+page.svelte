@@ -15,8 +15,8 @@
 		property="og:description"
 		content="Maria &amp; Mikkel inviterer til kirkelig velsignelse og fest lørdag den 22. maj 2027."
 	/>
-	<meta property="og:url" content="{site.url}/wedding" />
-	<meta property="og:image" content="{site.url}/wedding/hero.webp" />
+	<meta property="og:url" content="{site.url}/bryllup" />
+	<meta property="og:image" content="{site.url}/bryllup/hero.webp" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 	<link
@@ -241,7 +241,7 @@
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
-		background-image: url('/wedding/hero.webp');
+		background-image: url('/bryllup/hero.webp');
 		background-size: cover;
 		background-position: center 58%;
 		overflow: hidden;
